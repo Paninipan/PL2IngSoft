@@ -8,6 +8,6 @@ package paniscode.pl2ingsoft;
  *
  * @author alvaro
  */
-public class ContactosPersonales {
+class Tarea {
     
 }
