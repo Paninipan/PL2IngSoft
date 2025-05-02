@@ -52,5 +52,18 @@ public class ContactosPersonal {
     public void setDireccionPostal(String direccionPostal) {
         this.direccionPostal = direccionPostal;
     }
+    
+    public boolean confirmar_correo(String correo){
+        if (correo == null || !correo.contains("@")) {
+            return false;
+        }
+        int posicion_arroba = correo.indexOf("@");
+        int posicion_pri_punto = correo.indexOf(".");
+        int posicion_ult_punto = correo.lastIndexOf(".");
+        return posicion_arroba + 1 < posicion_pri_punto && posicion_ult_punto < correo.length() - 1;
+        //el arroba antes del punto tiene un carracter de separacion EJ: @dominio.
+        //el utlimo punto no esta al final de la cadena EJ:  .fin
+    }
+    
 }
 

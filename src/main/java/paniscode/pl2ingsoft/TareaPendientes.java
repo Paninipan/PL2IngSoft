@@ -8,12 +8,12 @@ package paniscode.pl2ingsoft;
  *
  * @author alvaro
  */
-public class TareasPen {
+public class TareaPendientes {
     private String descripcion;
     private String prioridad;
     private String estado;
 
-    public TareasPen(String descripcion, String prioridad, String estado) {
+    public TareaPendientes(String descripcion, String prioridad, String estado) {
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.estado = estado;

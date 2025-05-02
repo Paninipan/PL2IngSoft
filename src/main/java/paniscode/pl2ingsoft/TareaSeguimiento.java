@@ -11,7 +11,7 @@ package paniscode.pl2ingsoft;
 import java.time.LocalDate;
 import java.util.List;
 
-public class TareaSeguimiento extends TareasPen {
+public class TareaSeguimiento extends TareaPendientes {
     private LocalDate fechaLimite;
     private List<ContactosPersonal> responsables;
 

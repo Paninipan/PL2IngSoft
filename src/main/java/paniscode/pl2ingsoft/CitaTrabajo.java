@@ -9,13 +9,14 @@ package paniscode.pl2ingsoft;
  * @author alvaro
  */
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class CitaTrabajo extends Citas {
     private List<String> agendaTemas;
     private int duracionEstimadaMinutos;
 
-    public CitaTrabajo(LocalDateTime fechaHora, String lugar, List<ContactosPersonal> personasInvolucradas,
+    public CitaTrabajo(String fechaHora, String lugar, List<ContactosPersonal> personasInvolucradas,
                        List<String> agendaTemas, int duracionEstimadaMinutos) {
         super(fechaHora, lugar, personasInvolucradas);
         this.agendaTemas = agendaTemas;
@@ -36,6 +37,17 @@ public class CitaTrabajo extends Citas {
 
     public void setDuracionEstimadaMinutos(int duracionEstimadaMinutos) {
         this.duracionEstimadaMinutos = duracionEstimadaMinutos;
+    }
+    
+    public boolean estaConflicto(CitaTrabajo otra) {
+        LocalDateTime inicio1 = this.getFechaHora();
+        LocalDateTime fin1 = inicio1.plusMinutes(this.duracionEstimadaMinutos);
+
+        LocalDateTime inicio2 = otra.getFechaHora();
+        LocalDateTime fin2 = inicio2.plusMinutes(otra.duracionEstimadaMinutos);
+
+        // Verifica si los rangos de tiempo se solapan
+        return !(fin1.isBefore(inicio2) || inicio1.isAfter(fin2));
     }
 }
 
