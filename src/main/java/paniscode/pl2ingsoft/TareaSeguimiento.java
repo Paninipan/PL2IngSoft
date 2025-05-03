@@ -15,7 +15,7 @@ public class TareaSeguimiento extends TareaPendientes {
     private LocalDate fechaLimite;
     private List<ContactosPersonal> responsables;
 
-    public TareaSeguimiento(String descripcion, String prioridad, String estado,
+    public TareaSeguimiento(String descripcion, int prioridad, String estado,
                             LocalDate fechaLimite, List<ContactosPersonal> responsables) {
         super(descripcion, prioridad, estado);
         this.fechaLimite = fechaLimite;

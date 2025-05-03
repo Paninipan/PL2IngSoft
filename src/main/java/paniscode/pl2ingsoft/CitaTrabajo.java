@@ -9,7 +9,6 @@ package paniscode.pl2ingsoft;
  * @author alvaro
  */
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class CitaTrabajo extends Citas {

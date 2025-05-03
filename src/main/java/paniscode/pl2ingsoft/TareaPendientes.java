@@ -10,10 +10,10 @@ package paniscode.pl2ingsoft;
  */
 public class TareaPendientes {
     private String descripcion;
-    private String prioridad;
+    private int prioridad;
     private String estado;
 
-    public TareaPendientes(String descripcion, String prioridad, String estado) {
+    public TareaPendientes(String descripcion, int prioridad, String estado) {
         this.descripcion = descripcion;
         this.prioridad = prioridad;
         this.estado = estado;
@@ -27,11 +27,11 @@ public class TareaPendientes {
         this.descripcion = descripcion;
     }
 
-    public String getPrioridad() {
+    public int getPrioridad() {
         return prioridad;
     }
 
-    public void setPrioridad(String prioridad) {
+    public void setPrioridad(int prioridad) {
         this.prioridad = prioridad;
     }
 

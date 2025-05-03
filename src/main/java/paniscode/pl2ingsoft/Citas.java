@@ -50,16 +50,16 @@ public class Citas {
     }
     
     private LocalDateTime obtener_fecha(String fecha){
-            try {
-            // Definimos el patrón para el formato "yyyy-MM-dd-HH-mm"
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm");
-            return LocalDateTime.parse(fecha, formatter); // Intentamos parsear la fecha con la hora
-        } catch (DateTimeParseException e) {
-            // Si la fecha no es válida, capturamos la excepción y mostramos un mensaje
-            System.out.println("Fecha y hora no válida" );
-            return null; // Si no es válida, devolvemos null
-        }
-    }
+        try {
+                 // Definimos el patrón para el formato "yyyy-MM-dd-HH-mm"
+                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm");
+                 return LocalDateTime.parse(fecha, formatter); // Intentamos parsear la fecha con la hora
+             } catch (DateTimeParseException e) {
+                 // Si la fecha no es válida, capturamos la excepción y mostramos un mensaje
+                 System.out.println("Fecha y hora no válida: " + fecha);
+                 return null; // Si no es válida, devolvemos null
+             }
+ }
      public boolean esta_en_conflicto(Citas otraCita) {
         return this.fechaHora.equals(otraCita.getFechaHora());
     }
